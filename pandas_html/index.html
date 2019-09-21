@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>study</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {font-family: "Lato", sans-serif}
+    .mySlides {display: none}
+    iframe {
+        frameborder:0;
+        border: none;
+        framespacing:0;
+        marginheight:0;
+        marginwidth:0;
+        scrolling:no;
+        vspace:0}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="#ds" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Data science</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="#" class="w3-bar-item w3-button">1</a>
+                <a href="#" class="w3-bar-item w3-button">2</a>
+                <a href="#" class="w3-bar-item w3-button">3</a>
+            </div>
+        </div>
+        <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+</div>
+
+<!-- 네비게이터 기능인데 사실 메뉴가 하나라서 쓸 일이 없습니다 -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+    <a href="#ds" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Data science</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+    <!-- The Band Section -->
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="ds">
+        <h2 class="w3-wide">Data Science</h2>
+        <p class="w3-opacity"><i>Cracking the pandas cheat sheet</i></p>
+        <p class="w3-justify w3-margin-left">판다스 시각화 뽀개기; 박조은</p>
+        <p class="w3-wide w3-left-align w3-margin-left"><i class="fa fa-angle-double-right"></i>진도율 : 30강/30강 (100%)</p>
+        <div class="w3-light-grey w3-margin-left w3-margin-right">
+            <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:100%">100%</div>
+        </div>
+        <p class="w3-large w3-center w3-padding-16"></p>
+        <div class="w3-row-padding w3-container">
+            <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-dark-gray w3-left-align">09/01~09/08; 11 ~ 16강</button>
+            <div id="Demo1" class="w3-hide w3-container">
+                <div class="w3-row w3-padding-32 w3-center">
+                    <img src="pandas_html/0908_screenshot.png" width="30%">
+                </div>
+                <div class="w3-row w3-padding-32">
+                    <div class="w3-col m12 w3-center">
+                        <p>11. Reshaping data</p>
+                        <iframe src="pandas_html/11-Pandas_Reshaping_Data.html" width="700" height="400"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w3-row-padding w3-container">
+            <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-dark-gray w3-left-align">09/09~09/15; 17 ~ 29강</button>
+            <div id="Demo2" class="w3-hide w3-container">
+                <div class="w3-row w3-padding-32">
+                    <div class="w3-col m6 col-md-6 w3-right-align">
+                        <img src="pandas_html/2nd.png" width="30%">
+                    </div>
+                    <div class="w3-col m6 col-md-6 w3-left-align">
+                        <img src="pandas_html/last.png" width="30%">
+                    </div>
+                </div>
+                <div class="w3-row w3-padding-32">
+                    <div class="w3-col m12 w3-center">
+                        <p>17. pandas로 series 데이터, dataframe plot(차트) 그리기</p>
+                        <iframe src="pandas_html/17-Pandas_Plot_Series_DataFrame.html" width="700" height="400"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+
+</footer>
+
+<script>
+    // Automatic Slideshow - change image every 4 seconds
+    var myIndex = 0;
+    carousel();
+
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 4000);
+    }
+
+    // 메뉴바를 토글하는 function, 파라미터 없음
+    function myFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+
+    // 메뉴바를 토글하는 function, 파라미터 있음; 파라미터로 토글바의 id값을 넣어줌
+    function myFunction(id) {
+        var x = document.getElementById(id);
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+            x.previousElementSibling.className =
+                x.previousElementSibling.className.replace("w3-black", "w3-red");
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+            x.previousElementSibling.className =
+                x.previousElementSibling.className.replace("w3-red", "w3-black");
+        }
+    }
+</script>
+
+</body>
+</html>
+
